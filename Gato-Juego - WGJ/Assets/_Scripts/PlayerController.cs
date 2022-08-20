@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private Transform _model;
 
-    public float jumpForce = 0.5f;
+    public float jumpForce = 400f;
     public bool isGrounded;
     public LayerMask LayerGround;
 
@@ -31,7 +31,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-
+        _rigidBody.AddForce(Vector3.up * jumpForce);
     }
 
     private void GatherInput()
@@ -66,8 +66,9 @@ public class PlayerController : MonoBehaviour
 
     void Jump()
     {
-       
-            _rigidBody.AddForce(Vector3.up * jumpForce);
+
+        Debug.Log("salto");
+       _rigidBody.AddForce(Vector3.up * jumpForce);
        
        
     }
