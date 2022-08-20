@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 200}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 60462
+  controlID: 70660
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 60463
+  controlID: 70661
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
+  m_Name: SceneView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -163,8 +163,8 @@ MonoBehaviour:
     y: 0
     width: 907
     height: 380
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 5}
   m_Panes:
   - {fileID: 5}
@@ -395,9 +395,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 26.203537, y: -11.404208, z: 29.744984}
+    m_Target: {x: 41.60453, y: -6.426446, z: 26.347744}
     speed: 2
-    m_Value: {x: 26.203537, y: -11.404208, z: 29.744984}
+    m_Value: {x: 41.60453, y: -6.426446, z: 26.347744}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -444,13 +444,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.2881766, y: 0.34096614, z: -0.11065142, w: 0.88797164}
+    m_Target: {x: 0.09849195, y: 0.55255336, z: -0.0659487, w: 0.82503283}
     speed: 2
-    m_Value: {x: 0.2881707, y: 0.34095913, z: -0.110649146, w: 0.88795346}
+    m_Value: {x: 0.098491944, y: 0.5525533, z: -0.065948695, w: 0.82503283}
   m_Size:
-    m_Target: 18.919613
+    m_Target: 18.658499
     speed: 2
-    m_Value: 18.919613
+    m_Value: 18.658499
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -494,8 +494,8 @@ MonoBehaviour:
     y: 380
     width: 907
     height: 567
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 2}
   m_Panes:
   - {fileID: 2}
@@ -558,9 +558,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b88bfdff
-      m_LastClickedID: -160840
-      m_ExpandedIDs: 58a3fdff74cefdff7ccefdff02d8fdffb4e0fdff0452feffd0dbfeff3451ffffb8f0ffff44faffffb25a0000b65a0000c05a00007a920000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: a40cfdffc224fdff2e25fdff8e25fdff5c26fdffc426fdff0492fdff58a3fdff74cefdff02d8fdffd4d8fdffb4e0fdff0452feffd0dbfeff3451ffffb8f0ffff44faffffb25a0000b65a0000c05a00007a92000008aa0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -651,21 +651,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/_Scripts
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/_Scripts
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: H:\Git Hub\Gato-Juego---WGJ2\Gato-Juego - WGJ
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: e8590000
-    m_LastClickedID: 23016
+    m_SelectedIDs: f8590000
+    m_LastClickedID: 23032
     m_ExpandedIDs: 00000000e659000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -719,8 +719,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b88bfdff
-    m_LastClickedInstanceID: -160840
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 
     m_RenameOverlay:
@@ -769,8 +769,8 @@ MonoBehaviour:
     y: 0
     width: 430
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}

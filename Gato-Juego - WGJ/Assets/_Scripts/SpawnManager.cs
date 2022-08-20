@@ -16,15 +16,9 @@ public class SpawnManager : MonoBehaviour
         InstantiateObject();
     }
 
-    private void Update()
-    {
-        if (ActiveObject == false)
-        {
-            InstantiateObject();
-        }
-    }
+    
 
-    void InstantiateObject()
+    public void InstantiateObject()
     {
         if (SpotIndex >= spots.Length) SpotIndex = 0;
         if (ObjectIndex >= Objects.Length) ObjectIndex = 0;
@@ -33,7 +27,6 @@ public class SpawnManager : MonoBehaviour
         SpotIndex++;
         ObjectIndex++;
 
-        
         ActiveObject = true;
     }
 
