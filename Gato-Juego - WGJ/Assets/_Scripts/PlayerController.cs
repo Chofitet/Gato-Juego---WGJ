@@ -9,8 +9,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turnSpeed = 360;
     public Animator anim;
     Vector3 vecaux;
+    public Material Exp1;
+    public Material Exp2;
 
-
+    SkinnedMeshRenderer Material;
     private Vector3 input;
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private Transform _model;
@@ -19,7 +21,12 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public LayerMask LayerGround;
 
+    private void Start()
+    {
+        Material = GetComponentInChildren<SkinnedMeshRenderer>();
 
+        Material.material = Exp2;
+    }
     private void Update()
     {
         GatherInput();
@@ -43,11 +50,14 @@ public class PlayerController : MonoBehaviour
         if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0 )
         {
             anim.SetBool("Walking", true);
+            Material.material = Exp2;
         }
 
         if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
         {
             anim.SetBool("Walking", false);
+            Material.material = Exp1;
+            
         }
 
     }

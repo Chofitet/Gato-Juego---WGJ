@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: 7377b525cb372804a8f5886c02ddc626
+  - enabled: 1
+    path: Assets/Scenes/Prologo.unity
+    guid: 0fa6bb4040738934bba00d05f27a82ea
+  - enabled: 1
+    path: Assets/Scenes/PasoDelDia.unity
+    guid: 78dd2d5374a1c9243bf2f96bfd56820b
+  - enabled: 1
     path: Assets/Scenes/escenario.unity
     guid: 644014efc9e28cf4ba92b8c1a0817ada
   - enabled: 1
