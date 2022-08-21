@@ -7,13 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class ListManager : MonoBehaviour
 {
+    private SoundManager soundManager;
     public TMP_Text[] ObjectList;
     public Toggle[] toggles;
     int ListIndex;
 
+    private void Start()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
     private void Update()
     {
         CompleteList();
+        
     }
 
     public void ObjectGrabbed()
@@ -25,6 +31,7 @@ public class ListManager : MonoBehaviour
         string aux = ObjectList[ListIndex].text;
         ObjectList[ListIndex].text = "<s>" + aux + "</s>";
         ListIndex++;
+        soundManager.Tachado();
     }
 
     void CompleteList()

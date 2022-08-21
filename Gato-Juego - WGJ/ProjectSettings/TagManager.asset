@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Object
   - Cauldron
+  - Door
+  - Carta
   layers:
   - Default
   - TransparentFX

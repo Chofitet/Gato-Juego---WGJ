@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.Animations;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed = 5;
     [SerializeField] private float turnSpeed = 360;
+    public Animator anim;
+    Vector3 vecaux;
+
+
     private Vector3 input;
     [SerializeField] private Rigidbody _rigidBody;
     [SerializeField] private Transform _model;
@@ -13,6 +18,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 4000f;
     public bool isGrounded;
     public LayerMask LayerGround;
+
 
     private void Update()
     {
@@ -32,6 +38,18 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        Debug.Log(_rigidBody.velocity.magnitude);
+
+        if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0 )
+        {
+            anim.SetBool("Walking", true);
+        }
+
+        if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
+        {
+            anim.SetBool("Walking", false);
+        }
+
     }
 
     private void GatherInput()
@@ -41,7 +59,9 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        
         _rigidBody.MovePosition(transform.position + input.ToIso() * input.normalized.magnitude * speed * Time.deltaTime);
+        
     }
     private void Look()
     {
@@ -69,8 +89,15 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log("salto");
        _rigidBody.AddForce(Vector3.up * jumpForce);
-       
-       
+        anim.SetBool("Jump", true);
+        StartCoroutine(JumpDelay());
+
+    }
+
+    IEnumerator JumpDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        anim.SetBool("Jump", false);
     }
 }
 
