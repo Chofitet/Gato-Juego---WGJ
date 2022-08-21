@@ -5,6 +5,9 @@ using UnityEditor.Animations;
 
 public class PlayerController : MonoBehaviour
 {
+    public float WalkIncrease;
+    public float DecreaseIndex;
+    public float IcreaseIndex;
     [SerializeField] private float speed = 5;
     [SerializeField] private float turnSpeed = 360;
     public Animator anim;
@@ -45,19 +48,25 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Debug.Log(_rigidBody.velocity.magnitude);
 
         if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0 )
         {
             anim.SetBool("Walking", true);
             Material.material = Exp2;
+
+                WalkIncrease += Time.deltaTime * IcreaseIndex;
+           
         }
 
         if (Input.GetAxisRaw("Horizontal") == 0 && Input.GetAxisRaw("Vertical") == 0)
         {
             anim.SetBool("Walking", false);
             Material.material = Exp1;
-            
+
+            if (WalkIncrease >= 0)
+            {
+                WalkIncrease -= Time.deltaTime * IcreaseIndex;
+            }
         }
 
     }
@@ -89,7 +98,6 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hitInfo, 0.6f, LayerGround))
         {
             isGrounded = true;
-            Debug.Log("esta en el piso");
         }
         else isGrounded = false;
     }
@@ -97,7 +105,6 @@ public class PlayerController : MonoBehaviour
     void Jump()
     {
 
-        Debug.Log("salto");
        _rigidBody.AddForce(Vector3.up * jumpForce);
         anim.SetBool("Jump", true);
         StartCoroutine(JumpDelay());
