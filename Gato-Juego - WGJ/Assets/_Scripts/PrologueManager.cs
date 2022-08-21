@@ -4,15 +4,14 @@ using UnityEngine;
 
 public class PrologueManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] SoundManager sound;
+    Animator anim;
+
+    private void Start()
     {
-        
+        sound = FindObjectOfType<SoundManager>();
+        sound.NockNock();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

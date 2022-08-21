@@ -11,6 +11,13 @@ public class EscenManager : MonoBehaviour
         {
             StartCoroutine(Delay());
         }
+
+        if (SceneManager.GetActiveScene().name == "Final")
+        {
+            StartCoroutine(Delay());
+        }
+
+
     }
 
     public void EscenaPrologo()
@@ -27,6 +34,14 @@ public class EscenManager : MonoBehaviour
     IEnumerator Delay()
     {
         yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("escenario");
+        if (SceneManager.GetActiveScene().name == "PasoDelDia")
+        {
+            SceneManager.LoadScene("escenario");
+        }
+        yield return new WaitForSeconds(5);
+        if (SceneManager.GetActiveScene().name == "Final")
+        {
+            SceneManager.LoadScene("MenuPrincipal");
+        }
     }
 }

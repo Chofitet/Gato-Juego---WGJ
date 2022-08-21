@@ -14,10 +14,11 @@ public class PlayerController : MonoBehaviour
     Vector3 vecaux;
     public Material Exp1;
     public Material Exp2;
+    public Material Exp3;
 
     SkinnedMeshRenderer Material;
     private Vector3 input;
-    [SerializeField] private Rigidbody _rigidBody;
+    public Rigidbody _rigidBody;
     [SerializeField] private Transform _model;
 
     public float jumpForce = 4000f;
@@ -40,7 +41,6 @@ public class PlayerController : MonoBehaviour
         CheckinGround();
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
-
             Jump();
         }
     }
@@ -115,6 +115,12 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
         anim.SetBool("Jump", false);
+    }
+
+    public void Expresion3 ()
+    {
+        Material.material = Exp3;
+        _rigidBody.AddForce(Vector3.up * 15000);
     }
 }
 

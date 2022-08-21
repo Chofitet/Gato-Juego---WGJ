@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class PlayerStats : MonoBehaviour
 {
     public static int Vida = 3;
@@ -25,13 +26,16 @@ public class PlayerStats : MonoBehaviour
         if (Vida == 0)
         {
             V3.sprite = PerdidaVida;
+            StartCoroutine(Perdiste());
         }
 
     }
 
     IEnumerator Perdiste()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene("Perdiste");
+
     }
 
 

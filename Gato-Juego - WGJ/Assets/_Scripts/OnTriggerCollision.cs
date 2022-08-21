@@ -7,6 +7,8 @@ public class OnTriggerCollision : MonoBehaviour
     private ListManager List;
     private SpawnManager spawn;
     public Animator anim;
+    private SoundManager sound;
+    bool x;
 
     public GameObject carta;
     public Transform Spawn;
@@ -16,6 +18,7 @@ public class OnTriggerCollision : MonoBehaviour
     {
         List = FindObjectOfType<ListManager>();
         spawn = FindObjectOfType<SpawnManager>();
+        sound = FindObjectOfType<SoundManager>();
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -37,7 +40,12 @@ public class OnTriggerCollision : MonoBehaviour
         if (other.gameObject.tag == "Door" )
         {
             anim.SetBool("PuertaAbierta", true);
-            StartCoroutine(Carta());    
+            StartCoroutine(Carta());
+            if (x == false)
+            {
+                sound.Conversacion();
+                x = true;
+            }
         }
 
         if (other.gameObject.tag == "Carta" )

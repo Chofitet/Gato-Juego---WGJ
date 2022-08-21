@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final.unity
     guid: fa3e69eed9b84234ab9af701fbe1d444
+  - enabled: 1
+    path: Assets/Scenes/Perdiste.unity
+    guid: 6719f1199362d824385c387e4a7b3a37
   m_configObjects: {}
